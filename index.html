@@ -3,30 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi página con Bootstrap 5</title>
-  <!-- Enlaces a los archivos CSS de Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Mi página sin Bootstrap</title>
   <style>
-    /* Estilos personalizados */
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
     }
     .jumbotron {
       background-color: #f8f9fa;
-      padding: 80px 20px;
-      margin-bottom: 0;
-      border-radius: 0;
+      padding: 50px 0;
       text-align: center;
     }
     .jumbotron h1 {
-      font-size: 3.5rem;
-      font-weight: bold;
-      margin-bottom: 30px;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
     }
     .card {
-      border: none;
+      background-color: white;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .card-body {
+      padding: 20px;
     }
     .card-title {
       font-size: 1.5rem;
@@ -42,79 +66,43 @@
 </head>
 <body>
   <header>
-    <!-- Navbar de Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">JUEGOS- ADRIAN</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">jUEGOS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
     </nav>
   </header>
 
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-4">Juegos PS3 PKG</h1>
-      <p class="lead">Juegos de ps3 originales guiño guiño .</p>
+      <h1>Bienvenido a mi página sin Bootstrap</h1>
+      <p>Aquí puedes agregar una descripción breve de tu página.</p>
     </div>
   </div>
 
-  <main class="container mt-4">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">PARTE 1</h5>
-            <a href="#" class="btn btn-primary">Botón 1</a>
-          </div>
-        </div>
+  <main class="container">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Contenido 1</h2>
+        <p>Aquí puedes agregar cualquier contenido que desees.</p>
+        <a href="#" class="btn">Botón 1</a>
       </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">PARTE 2</h5>
-            <a href="#" class="btn btn-primary">Botón 2</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">PARTE 3</h5>
-            <a href="#" class="btn btn-primary">Botón 1</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">PARTE 4</h5>
-            <a href="#" class="btn btn-primary">Botón 2</a>
-          </div>
-        </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Contenido 2</h2>
+        <p>Otro contenido interesante para mostrar.</p>
+        <a href="#" class="btn">Botón 2</a>
       </div>
     </div>
   </main>
 
-  
-
-  <!-- Enlaces a los archivos JavaScript de Bootstrap 5 (jQuery y Popper.js son requeridos) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Mi Sitio. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 </body>
 </html>

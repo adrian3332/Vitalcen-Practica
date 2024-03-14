@@ -11,30 +11,44 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            position: relative; /* Ajustar para que los botones flotantes sean relativos al cuerpo */
+            position: relative;
         }
         #miVideo {
             width: 100%;
-            height: calc(100% - 50px); /* Ajuste para dejar espacio para los botones de enlace */
+            height: calc(100% - 50px);
         }
         .floating-buttons {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            display: none; /* Los botones están ocultos inicialmente */
             flex-direction: column;
             z-index: 999;
         }
         .floating-buttons .btn {
             margin-bottom: 10px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 20px;
+            font-size: 24px;
+        }
+        .invisible {
+            display: none;
+        }
+        /* CSS para el botón adicional 1 */
+        #additionalBtn1 {
+            width: 100px;
+            height: 50px;
+        }
+        /* CSS para el botón adicional 2 */
+        #additionalBtn2 {
+            width: 120px;
+            height: 60px;
         }
     </style>
 </head>
@@ -44,14 +58,26 @@
   <source src="./Mis Quince (1).mp4" type="video/mp4">
 </video>
 
-<div class="floating-buttons">
+<div class="floating-buttons" id="floating-buttons">
   <a href="https://maps.app.goo.gl/DrUVXoas6FVNcRYZ6" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i></a>
-  <a href="https://wa.me/numero" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://w.app/ry5Mko" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    var video = document.getElementById('miVideo');
+    var floatingButtons = document.getElementById('floating-buttons');
+
+    video.addEventListener('timeupdate', function() {
+        if (video.currentTime >= 0.45) {
+            floatingButtons.style.display = 'flex'; // Mostrar los botones
+        } else {
+            floatingButtons.style.display = 'none'; // Ocultar los botones
+        }
+    });
+</script>
 
 </body>
 </html>

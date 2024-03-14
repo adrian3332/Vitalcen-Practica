@@ -11,44 +11,49 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            position: relative;
+            position: relative; /* Ajustar para que los botones flotantes sean relativos al cuerpo */
         }
         #miVideo {
             width: 100%;
-            height: calc(100% - 50px);
+            height: calc(100% - 50px); /* Ajuste para dejar espacio para los botones de enlace */
         }
         .floating-buttons {
             position: absolute;
-            top: 61%;
-            right: 10px;
-            transform: translateY(-50%);
-            display: none; /* Los botones están ocultos inicialmente */
+            top: 20px;
+            right: 20px;
+            display: flex;
             flex-direction: column;
             z-index: 999;
         }
         .floating-buttons .btn {
-            margin-bottom: 10px;
-            width: 70px;
-            height: 70px;
-            border-radius: 10px;
+            margin-bottom: 30px;
+            width: 70px; /* Ancho modificado */
+            height: 70px; /* Alto modificado */
+            border-radius: 50%;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
+            font-size: 24px; /* Tamaño de fuente modificado */
         }
         .invisible {
             display: none;
         }
         /* CSS para el botón adicional 1 */
         #additionalBtn1 {
-            width: 100px;
-            height: 50px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px; /* Ancho modificado */
+            height: 50px; /* Alto modificado */
         }
         /* CSS para el botón adicional 2 */
         #additionalBtn2 {
-            width: 120px;
-            height: 60px;
+            position: absolute;
+            top: 100px;
+            left: 20px;
+            width: 80px; /* Ancho modificado */
+            height: 60px; /* Alto modificado */
         }
     </style>
 </head>
@@ -58,24 +63,35 @@
   <source src="./Mis Quince (1).mp4" type="video/mp4">
 </video>
 
-<div class="floating-buttons" id="floating-buttons">
+<div class="floating-buttons">
   <a href="https://maps.app.goo.gl/DrUVXoas6FVNcRYZ6" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i></a>
   <a href="https://w.app/ry5Mko" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+  <!-- Botones adicionales -->
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    var video = document.getElementById('miVideo');
-    var floatingButtons = document.getElementById('floating-buttons');
+    // Espera a que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+        var video = document.getElementById('miVideo');
+        var additionalBtn1 = document.getElementById('additionalBtn1');
+        var additionalBtn2 = document.getElementById('additionalBtn2');
 
-    video.addEventListener('timeupdate', function() {
-        if (video.currentTime >= 0.45) {
-            floatingButtons.style.display = 'flex'; // Mostrar los botones
-        } else {
-            floatingButtons.style.display = 'none'; // Ocultar los botones
-        }
+        // Espera a que el video esté completamente cargado
+        video.addEventListener('loadedmetadata', function() {
+            // Actualiza la visibilidad de los botones en función del tiempo de reproducción del video
+            video.addEventListener('timeupdate', function() {
+                if (video.currentTime >= 45) {
+                    additionalBtn1.classList.remove('invisible');
+                    additionalBtn2.classList.remove('invisible');
+                } else {
+                    additionalBtn1.classList.add('invisible');
+                    additionalBtn2.classList.add('invisible');
+                }
+            });
+        });
     });
 </script>
 

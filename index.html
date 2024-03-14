@@ -1,108 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi página sin Bootstrap</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-    }
-    header {
-      background-color: #343a40;
-      color: white;
-      padding: 10px 0;
-      text-align: center;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline;
-      margin-right: 20px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-    }
-    .jumbotron {
-      background-color: #f8f9fa;
-      padding: 50px 0;
-      text-align: center;
-    }
-    .jumbotron h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    .container {
-      width: 80%;
-      margin: auto;
-      overflow: hidden;
-    }
-    .card {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
-    .card-body {
-      padding: 20px;
-    }
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    .footer {
-      background-color: #343a40;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video con Enlaces</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            position: relative; /* Ajustar para que los botones flotantes sean relativos al cuerpo */
+        }
+        #miVideo {
+            width: 100%;
+            height: calc(100% - 50px); /* Ajuste para dejar espacio para los botones de enlace */
+        }
+        .floating-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 999;
+        }
+        .floating-buttons .btn {
+            margin-bottom: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Acerca de</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Bienvenido a mi página sin Bootstrap</h1>
-      <p>Aquí puedes agregar una descripción breve de tu página.</p>
-    </div>
-  </div>
+<video id="miVideo" width="1080" height="1920" controls>
+  <source src="./XV años (4).mp4" type="video/mp4">
+</video>
 
-  <main class="container">
-    <div class="card">
-      <div class="card-body">
-        <h2 class="card-title">Contenido 1</h2>
-        <p>Aquí puedes agregar cualquier contenido que desees.</p>
-        <a href="#" class="btn">Botón 1</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h2 class="card-title">Contenido 2</h2>
-        <p>Otro contenido interesante para mostrar.</p>
-        <a href="#" class="btn">Botón 2</a>
-      </div>
-    </div>
-  </main>
+<div class="floating-buttons">
+  <a href="https://maps.app.goo.gl/DrUVXoas6FVNcRYZ6" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i></a>
+  <a href="https://wa.me/numero" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+</div>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 Mi Sitio. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
